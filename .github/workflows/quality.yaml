@@ -1,0 +1,33 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: MCP Quality And Privacy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Secret scan (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "false"
+      - name: Validate JSON manifests
+        run: |
+          set -eu
+          fail=0
+          for f in $(find . -name '*.json' -not -path './.git/*'); do
+            python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$f" \
+              || { echo "::error file=$f::invalid JSON"; fail=1; }
+          done
+          [ "$fail" -eq 0 ] && echo "JSON manifests OK"
+          exit "$fail"
