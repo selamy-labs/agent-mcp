@@ -1,11 +1,43 @@
 {
   "mcpServers": {
-    "datakit": {
+    "laneq": {
       "command": "uvx",
       "args": [
         "--from",
-        "datakit-mcp[mcp] @ git+https://github.com/selamy-labs/agent-mcp@main#subdirectory=servers/datakit",
-        "datakit-mcp"
+        "laneq[mcp] @ git+https://github.com/selamy-labs/laneq@v0.4.0",
+        "laneq-mcp"
+      ]
+    },
+    "reddit": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "reddit-mcp[mcp] @ git+https://github.com/selamy-labs/reddit-mcp@v0.1.0",
+        "reddit-mcp"
+      ]
+    },
+    "dispatch": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "dispatch-mcp[mcp] @ git+https://github.com/selamy-labs/dispatch-mcp@v0.1.0",
+        "dispatch-mcp"
+      ]
+    },
+    "memory": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "memory-mcp[mcp] @ git+https://github.com/selamy-labs/memory-mcp@v0.1.0",
+        "memory-mcp"
+      ]
+    },
+    "telemetry": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "telemetry-mcp[mcp] @ git+https://github.com/selamy-labs/telemetry-mcp@main",
+        "telemetry-mcp"
       ]
     }
   }
