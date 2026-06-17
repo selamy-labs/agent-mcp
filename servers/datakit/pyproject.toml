@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "datakit-mcp"
+version = "0.1.0"
+description = "Deterministic data utilities (hashing, encoding, JSON canonicalize/diff, timezone math) as an MCP server."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Selamy Labs" }]
+keywords = ["mcp", "model-context-protocol", "agent-tools", "json", "datetime"]
+dependencies = ["mcp>=1.2.0"]
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.2.0"]
+test = ["pytest>=8.0", "pytest-cov>=5.0"]
+
+[project.scripts]
+datakit-mcp = "datakit.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/datakit"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=datakit --cov-report=term-missing --cov-fail-under=90"
+testpaths = ["tests"]
+pythonpath = ["src"]
