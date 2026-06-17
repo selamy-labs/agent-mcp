@@ -1,6 +1,6 @@
 {
   "name": "agent-mcp",
   "version": "0.1.0",
-  "description": "Selamy Labs public generic MCP servers. Bundles datakit (deterministic data utilities). Single versioned unit; pin by tag/SHA for reproducible installs.",
+  "description": "Selamy Labs public MCP marketplace-aggregator. Bundles the per-server MCP packages (laneq, reddit, dispatch, memory, telemetry) by pinned tag for reproducible installs; each server is maintained in its own repo.",
   "mcpServers": "./mcp-servers.json"
 }
