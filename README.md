@@ -15,7 +15,7 @@ independent Python packaging, its own CI + coverage gate, its own semver tags, a
 `uvx --from git+<repo>@<tag>` reproducible install — without the multi-package
 versioning mess of a monorepo. This repo gives them a single home for discovery and
 native, pinned distribution, so workloads add **one** marketplace instead of tracking
-five repos. (Decision: `#606` / `#653` Option B.)
+five repos.
 
 ## Servers in the marketplace
 
