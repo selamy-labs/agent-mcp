@@ -30,3 +30,36 @@ jobs:
           done
           [ "$fail" -eq 0 ] && echo "JSON manifests OK"
           exit "$fail"
+
+  tests:
+    name: Server Tests And Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test each server (>=90% coverage floor)
+        run: |
+          set -eu
+          # Generic: discover every servers/<name>/ that is a testable Python
+          # package (has both a pyproject.toml and a tests/ dir) and run its
+          # suite under coverage. Each server's pyproject sets the floor via
+          # --cov-fail-under (datakit pins 90); CI just runs it, so future
+          # servers are covered automatically with no workflow edits.
+          shopt -s nullglob
+          found=0
+          for dir in servers/*/; do
+            [ -f "$dir/pyproject.toml" ] || continue
+            [ -d "$dir/tests" ] || continue
+            found=1
+            echo "::group::$dir"
+            ( cd "$dir" \
+              && python -m pip install --quiet --upgrade pip \
+              && python -m pip install --quiet -e ".[mcp,test]" \
+              && python -m pytest -q )
+            echo "::endgroup::"
+          done
+          if [ "$found" -eq 0 ]; then
+            echo "No testable servers found under servers/*/ (need pyproject.toml + tests/)."
+          fi
