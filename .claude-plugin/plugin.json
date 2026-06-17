@@ -1,0 +1,6 @@
+{
+  "name": "agent-mcp",
+  "version": "0.1.0",
+  "description": "Selamy Labs public generic MCP servers. Bundles datakit (deterministic data utilities). Single versioned unit; pin by tag/SHA for reproducible installs.",
+  "mcpServers": "./mcp-servers.json"
+}

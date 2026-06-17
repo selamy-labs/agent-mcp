@@ -1,0 +1,16 @@
+{
+  "name": "selamy-labs-mcp",
+  "owner": { "name": "Selamy Labs" },
+  "version": "0.1.0",
+  "metadata": {
+    "description": "Selamy Labs public, generic MCP servers distributed as a versioned Claude Code plugin. Workloads add this marketplace and enable the plugin, pinned by tag/SHA, instead of copying server configs around."
+  },
+  "plugins": [
+    {
+      "name": "agent-mcp",
+      "source": "./",
+      "version": "0.1.0",
+      "description": "Generic MCP servers from Selamy Labs. Currently bundles datakit (deterministic data utilities: hashing, base64, UUIDv5, canonical JSON, JSON diff, and timezone-correct datetime math)."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "datakit": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "datakit-mcp[mcp] @ git+https://github.com/selamy-labs/agent-mcp@main#subdirectory=servers/datakit",
+        "datakit-mcp"
+      ]
+    }
+  }
+}
