@@ -39,6 +39,14 @@
         "telemetry-mcp[mcp] @ git+https://github.com/selamy-labs/telemetry-mcp@v0.1.0",
         "telemetry-mcp"
       ]
+    },
+    "dns": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "dns-mcp[mcp] @ git+https://github.com/selamy-labs/dns-mcp@v0.1.0",
+        "dns-mcp"
+      ]
     }
   }
 }
