@@ -1,5 +1,8 @@
 # agent-mcp
 
+[![CI](https://github.com/selamy-labs/agent-mcp/actions/workflows/quality.yaml/badge.svg)](https://github.com/selamy-labs/agent-mcp/actions/workflows/quality.yaml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
 The **public MCP (Model Context Protocol) marketplace-aggregator** for Selamy Labs —
 the public counterpart to [`agent-skills`](https://github.com/selamy-labs/agent-skills).
 It is the single discovery + distribution point for our public MCP servers. Each
