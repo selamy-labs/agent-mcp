@@ -1,7 +1,7 @@
 {
   "name": "selamy-labs-mcp",
   "owner": { "name": "Selamy Labs" },
-  "version": "0.1.0",
+  "version": "0.2.0",
   "metadata": {
     "description": "Selamy Labs public, generic MCP servers distributed as a versioned Claude Code plugin. Workloads add this marketplace and enable the plugin, pinned by tag/SHA, instead of copying server configs around."
   },
@@ -9,8 +9,8 @@
     {
       "name": "agent-mcp",
       "source": "./",
-      "version": "0.1.0",
-      "description": "Selamy Labs public MCP servers, aggregated for one-step discovery + pinned install: laneq (priority queue), reddit (terms-aware Reddit research), dispatch (allowlisted lane dispatch), memory (markdown-memory store), telemetry (metrics backend). Each server lives in its own versioned repo."
+      "version": "0.2.0",
+      "description": "Selamy Labs public MCP servers, aggregated for one-step discovery + pinned install: laneq (priority queue), reddit (terms-aware Reddit research), dispatch (allowlisted lane dispatch), memory (markdown-memory store), telemetry (read-only metrics backend), telemetry-emit (at-will OTel emission), dns (record CRUD). Each server lives in its own versioned repo."
     }
   ]
 }
